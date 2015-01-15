@@ -1,0 +1,32 @@
+<table>
+<thead>
+<tr>
+	<th>#</th>
+	<th>Product Image</th>
+	<th>Brand</th>
+	<th>Product Name</th>
+	<th>Brief Description</th>
+	<th>Quantity Sold</th>
+</tr>
+</thead>
+<tbody>
+#foreach ($product in $products)
+	#if($!product.discontinued)
+	<tr>
+		<td>$velocityCount</td>
+		<td><img width="32" height="32" src="http://store.bbcomcdn.com$product.image"></td>
+		<td>#if ($product.brandId)
+			<a href="http://www.bodybuilding.com/store$product.brandUrl">$!product.brandName</a>
+			#end</td>
+		<td>
+		#if ($product.productUrl)
+		<a href="http://www.bodybuilding.com/store$product.productUrl">$!product.name</a>
+		#end
+		</td>
+		<td>$!product.description</td>
+		<td>$!product.quantitySold</td>
+	</tr>
+	#end
+#end
+</tbody>
+</table>
