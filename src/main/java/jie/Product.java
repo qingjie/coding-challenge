@@ -14,9 +14,9 @@ public class Product {
 	private String brandUrl;
 	private String productUrl;
 	private String description;
-	private boolean discontinued;
 	@JsonProperty("numberSoldInLast30Days")
 	private int quantitySold;
+	private boolean discontinued;
 
 	public String getId() {
 		return id;
@@ -66,17 +66,10 @@ public class Product {
 		this.brandUrl = brandUrl;
 	}
 
-	/**
-	 * @return the productUrl
-	 */
 	public String getProductUrl() {
 		return productUrl;
 	}
 
-	/**
-	 * @param productUrl
-	 *            the productUrl to set
-	 */
 	public void setProductUrl(String productUrl) {
 		this.productUrl = productUrl;
 	}
@@ -89,27 +82,20 @@ public class Product {
 		this.description = description;
 	}
 
-	/**
-	 * @return the discontinued
-	 */
-	public boolean isDiscontinued() {
-		return discontinued;
-	}
-
-	/**
-	 * @param discontinued
-	 *            the discontinued to set
-	 */
-	public void setDiscontinued(boolean discontinued) {
-		this.discontinued = discontinued;
-	}
-
 	public int getQuantitySold() {
 		return quantitySold;
 	}
 
 	public void setQuantitySold(int quantitySold) {
 		this.quantitySold = quantitySold;
+	}
+
+	public boolean isDiscontinued() {
+		return discontinued;
+	}
+
+	public void setDiscontinued(boolean discontinued) {
+		this.discontinued = discontinued;
 	}
 
 }

@@ -21,14 +21,14 @@ public class ProductServiceImpl implements ProductService {
 	private RestTemplate restTemplate;
 	private ObjectMapper objectMapper = new ObjectMapper();
 
-	// @Override
+	//@Override
 	public List<Product> findAllProducts() throws Exception {
 		return objectMapper.readValue(
 				get("http://api.bodybuilding.com/api-proxy/commerce/products"),
 				ProductResponse.class).getData();
 	}
 
-	// @Override
+	//@Override
 	public Brand getBrand(String brandId) throws Exception {
 		List<Brand> result = objectMapper.readValue(
 				get("http://api.bodybuilding.com/api-proxy/commerce/brand/"
